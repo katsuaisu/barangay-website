@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay AdReiNo | Balita & Anunsyo</title>
+    <meta name="description" content="Mga balita, anunsyo, at mga update mula sa Barangay AdReiNo." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --barangay-blue: #0a3d91;
+        --barangay-blue-dark: #072a66;
+        --sunburst-gold: #fcd116;
+        --signal-red: #ce1126;
+        --paper: #faf8f2;
+        --ink: #1e293b;
+        --mist: #5b6472;
+        --card-border: #e7e2d6;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Public Sans", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+      h1, h2, h3, .brand-font {
+        font-family: "Fraunces", serif;
+        color: var(--barangay-blue-dark);
+      }
+      .utility-strip {
+        background: var(--barangay-blue-dark);
+        color: #fff;
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+      }
+      .utility-strip a { color: #fff; font-weight: 600; }
+      .utility-strip .icon { color: var(--sunburst-gold); }
+      .navbar {
+        background: var(--barangay-blue);
+        border-bottom: 4px solid var(--sunburst-gold);
+      }
+      .navbar-item, .navbar-link {
+        color: #fff !important;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .navbar-item:hover, .navbar-link:hover {
+        background-color: var(--barangay-blue-dark) !important;
+        color: var(--sunburst-gold) !important;
+      }
+      .navbar-burger { color: #fff; }
+      .navbar-burger span { background-color: #fff; }
+      .seal-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-right: 0.6rem;
+        border: 2px solid #fff;
+      }
+      .hero-barangay {
+        background: linear-gradient(180deg, var(--barangay-blue) 0%, var(--barangay-blue-dark) 100%);
+        color: #fff;
+        padding: 3.5rem 1.5rem 4.5rem;
+      }
+      .hero-seal {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 2.4rem;
+        border: 4px solid #fff;
+        margin: 0 auto 1.25rem;
+      }
+      .hero-barangay h1 {
+        color: #fff;
+        font-size: 2.6rem;
+        margin-bottom: 0.25rem;
+      }
+      .hero-subtitle {
+        color: var(--sunburst-gold);
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .hero-tagline {
+        color: #eaf0fb;
+        max-width: 650px;
+        margin: 1.25rem auto 2rem;
+        font-size: 1.15rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--signal-red);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .section-intro {
+        color: var(--mist);
+        max-width: 620px;
+        margin-bottom: 2.5rem;
+      }
+      .announcement-card {
+        background: #fff;
+        border: 1px solid var(--card-border);
+        border-left: 6px solid var(--barangay-blue);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+      .announcement-date {
+        color: var(--signal-red);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .info-box {
+        background: #fff;
+        border: 1px solid var(--card-border);
+        border-radius: 14px;
+        padding: 1.5rem;
+      }
+      footer.site-footer {
+        background: var(--barangay-blue-dark);
+        color: #eaf0fb;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      footer.site-footer h4 {
+        color: #fff;
+        font-family: "Fraunces", serif;
+        margin-bottom: 1rem;
+      }
+      footer.site-footer a { color: #eaf0fb; }
+      footer.site-footer a:hover { color: var(--sunburst-gold); }
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        margin-right: 0.5rem;
+      }
+      .footer-social a:hover {
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        font-size: 0.9rem;
+        color: #b8c7e6;
+      }
+      @media (max-width: 768px) {
+        .hero-barangay h1 { font-size: 2.1rem; }
+        .section-title { font-size: 1.7rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="utility-strip">
+      <div class="container is-flex is-justify-content-space-between is-align-items-center is-flex-wrap-wrap px-4" style="gap:0.5rem">
+        <div>
+          <span class="icon"><i class="fa-solid fa-phone"></i></span>
+          Hotline: <a href="tel:+639696372771">09696372771</a>
+        </div>
+        <div>
+          <span class="icon"><i class="fa-solid fa-clock"></i></span>
+          Bukas: Lunes–Biyernes, 8:00 AM – 5:00 PM
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html" style="align-items:center">
+            <span class="seal-badge">BARU</span>
+            <span class="brand-font" style="color:#fff; font-size:1.2rem">Barangay AdReiNo</span>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="officials.html">Mga Opisyal</a>
+            <a class="navbar-item" href="services.html">Mga Serbisyo</a>
+            <a class="navbar-item" href="announcements.html">Balita &amp; Anunsyo</a>
+            <a class="navbar-item" href="hotlines.html">Emergency Hotlines</a>
+            <a class="navbar-item" href="contact.html">Pahina ng Pakikipag-ugnayan</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero-barangay">
+        <div class="container has-text-centered">
+          <div class="hero-seal" aria-hidden="true">BARU</div>
+          <p class="hero-subtitle">Republika ng Pilipinas &bull; Lungsod ng Halimbawa</p>
+          <h1>Balita &amp; Anunsyo</h1>
+          <p class="hero-tagline">Manatiling updated sa mga programa, kaganapan, at abiso ng barangay.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-kicker has-text-centered">Balita</p>
+          <h2 class="section-title has-text-centered">Mga pinakabagong update</h2>
+          <p class="section-intro has-text-centered" style="margin-left:auto; margin-right:auto;">
+            Narito ang mga abiso at kaganapang dapat malaman ng bawat residente.
+          </p>
+
+          <div class="columns is-multiline">
+            <div class="column is-8">
+              <div class="announcement-card">
+                <p class="announcement-date">Agosto 10, 2026</p>
+                <h3 style="font-size:1.15rem; margin:0.35rem 0;">Libreng Bakuna Laban sa Trangkaso</h3>
+                <p>Magkakaroon ng libreng bakuna sa Barangay Health Center tuwing Sabado, 8AM–12NN. Dalhin ang inyong barangay ID.</p>
+              </div>
+              <div class="announcement-card">
+                <p class="announcement-date">Agosto 3, 2026</p>
+                <h3 style="font-size:1.15rem; margin:0.35rem 0;">Pagpapalinis ng Kanal Bago ang Tag-ulan</h3>
+                <p>Aabisuhan ang mga residente ng Purok 3–5 tungkol sa iskedyul ng clean-up drive sa darating na linggo.</p>
+              </div>
+              <div class="announcement-card">
+                <p class="announcement-date">Hulyo 28, 2026</p>
+                <h3 style="font-size:1.15rem; margin:0.35rem 0;">Pagbubukas ng Rehistrasyon para sa Senior Citizen ID</h3>
+                <p>Maaari nang magparehistro sa Barangay Hall, Lunes hanggang Biyernes, 8AM–4PM.</p>
+              </div>
+            </div>
+
+            <div class="column is-4">
+              <div class="info-box">
+                <h3 class="title is-5">Paalala</h3>
+                <ul>
+                  <li>Session ng Barangay Council — tuwing 2nd at 4th Lunes ng buwan.</li>
+                  <li>Libreng konsulta sa Health Center — araw-araw, 8AM–5PM.</li>
+                  <li>Distribusyon ng ayuda — ipapaalam sa mga opisyal ng purok.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4">
+            <h4>Barangay AdReiNo</h4>
+            <p>Opisyal na website ng barangay para sa pag-ugnay, serbisyo, at mahalagang impormasyon ng komunidad.</p>
+          </div>
+          <div class="column is-4">
+            <h4>Mabilisang Link</h4>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="officials.html">Mga Opisyal</a></p>
+            <p><a href="services.html">Mga Serbisyo</a></p>
+            <p><a href="contact.html">Makipag-ugnayan</a></p>
+          </div>
+          <div class="column is-4">
+            <h4>Sundan Kami</h4>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom has-text-centered">© 2026 Barangay AdReiNo. Lahat ng karapatan ay nakalaan.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".navbar-burger");
+        const menu = document.getElementById(burger.dataset.target);
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("is-active");
+          menu.classList.toggle("is-active");
+          burger.setAttribute("aria-expanded", burger.classList.contains("is-active"));
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay AdReiNo | Mga Serbisyo</title>
+    <meta name="description" content="Listahan ng mga serbisyo ng Barangay AdReiNo." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --barangay-blue: #0a3d91;
+        --barangay-blue-dark: #072a66;
+        --sunburst-gold: #fcd116;
+        --signal-red: #ce1126;
+        --paper: #faf8f2;
+        --ink: #1e293b;
+        --mist: #5b6472;
+        --card-border: #e7e2d6;
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: "Public Sans", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.7;
+        font-size: 18px;
+      }
+      h1, h2, h3, .brand-font {
+        font-family: "Fraunces", serif;
+        color: var(--barangay-blue-dark);
+      }
+      .utility-strip {
+        background: var(--barangay-blue-dark);
+        color: #fff;
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+      }
+      .utility-strip a { color: #fff; font-weight: 600; }
+      .utility-strip .icon { color: var(--sunburst-gold); }
+      .navbar {
+        background: var(--barangay-blue);
+        border-bottom: 4px solid var(--sunburst-gold);
+      }
+      .navbar-item, .navbar-link {
+        color: #fff !important;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .navbar-item:hover, .navbar-link:hover {
+        background-color: var(--barangay-blue-dark) !important;
+        color: var(--sunburst-gold) !important;
+      }
+      .navbar-burger { color: #fff; }
+      .navbar-burger span { background-color: #fff; }
+      .seal-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-right: 0.6rem;
+        border: 2px solid #fff;
+      }
+      .hero-barangay {
+        background: linear-gradient(180deg, var(--barangay-blue) 0%, var(--barangay-blue-dark) 100%);
+        color: #fff;
+        padding: 3.5rem 1.5rem 4.5rem;
+      }
+      .hero-seal {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 2.4rem;
+        border: 4px solid #fff;
+        margin: 0 auto 1.25rem;
+      }
+      .hero-barangay h1 {
+        color: #fff;
+        font-size: 2.6rem;
+        margin-bottom: 0.25rem;
+      }
+      .hero-subtitle {
+        color: var(--sunburst-gold);
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .hero-tagline {
+        color: #eaf0fb;
+        max-width: 650px;
+        margin: 1.25rem auto 2rem;
+        font-size: 1.15rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--signal-red);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .section-intro {
+        color: var(--mist);
+        max-width: 620px;
+        margin-bottom: 2.5rem;
+      }
+      .service-card {
+        background: #fff;
+        border: 1px solid var(--card-border);
+        border-radius: 14px;
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+        height: 100%;
+        display: block;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(10, 61, 145, 0.12);
+        border-color: var(--barangay-blue);
+      }
+      .service-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #eaf0fb;
+        color: var(--barangay-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        margin: 0 auto 1rem;
+      }
+      .service-card h3 { font-size: 1.18rem; margin-bottom: 0.35rem; }
+      .service-card p { color: var(--mist); }
+      .info-box {
+        background: #fff;
+        border: 1px solid var(--card-border);
+        border-left: 6px solid var(--barangay-blue);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+      }
+      footer.site-footer {
+        background: var(--barangay-blue-dark);
+        color: #eaf0fb;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      footer.site-footer h4 {
+        color: #fff;
+        font-family: "Fraunces", serif;
+        margin-bottom: 1rem;
+      }
+      footer.site-footer a { color: #eaf0fb; }
+      footer.site-footer a:hover { color: var(--sunburst-gold); }
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        margin-right: 0.5rem;
+      }
+      .footer-social a:hover {
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        font-size: 0.9rem;
+        color: #b8c7e6;
+      }
+      @media (max-width: 768px) {
+        .hero-barangay h1 { font-size: 2.1rem; }
+        .section-title { font-size: 1.7rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="utility-strip">
+      <div class="container is-flex is-justify-content-space-between is-align-items-center is-flex-wrap-wrap px-4" style="gap:0.5rem">
+        <div>
+          <span class="icon"><i class="fa-solid fa-phone"></i></span>
+          Hotline: <a href="tel:+639696372771">09696372771</a>
+        </div>
+        <div>
+          <span class="icon"><i class="fa-solid fa-clock"></i></span>
+          Bukas: Lunes–Biyernes, 8:00 AM – 5:00 PM
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html" style="align-items:center">
+            <span class="seal-badge">BARU</span>
+            <span class="brand-font" style="color:#fff; font-size:1.2rem">Barangay AdReiNo</span>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="officials.html">Mga Opisyal</a>
+            <a class="navbar-item" href="services.html">Mga Serbisyo</a>
+            <a class="navbar-item" href="announcements.html">Balita &amp; Anunsyo</a>
+            <a class="navbar-item" href="hotlines.html">Emergency Hotlines</a>
+            <a class="navbar-item" href="contact.html">Pahina ng Pakikipag-ugnayan</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero-barangay">
+        <div class="container has-text-centered">
+          <div class="hero-seal" aria-hidden="true">BARU</div>
+          <p class="hero-subtitle">Republika ng Pilipinas &bull; Lungsod ng Halimbawa</p>
+          <h1>Mga Serbisyo</h1>
+          <p class="hero-tagline">Mabilis at madaling ma-access ang mga serbisyong pang-barangay para sa inyong pangangailangan.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-kicker has-text-centered">Mga Serbisyo</p>
+          <h2 class="section-title has-text-centered">Ano ang kailangan mo ngayon?</h2>
+          <p class="section-intro has-text-centered" style="margin-left:auto; margin-right:auto;">
+            Pindutin lamang ang serbisyong kailangan ninyo para sa karagdagang impormasyon.
+          </p>
+
+          <div class="columns is-multiline">
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h3>Barangay Clearance</h3>
+                <p>Para sa trabaho, negosyo, o iba pang pangangailangan.</p>
+              </a>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3>Certificate of Residency</h3>
+                <p>Patunay na kayo ay residente ng barangay.</p>
+              </a>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+                <h3>Business Permit</h3>
+                <p>Pag-apply o pag-renew ng permit para sa maliit na negosyo.</p>
+              </a>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                <h3>Magsampa ng Reklamo</h3>
+                <p>Blotter report at pag-aayos ng away o alitan (Lupon).</p>
+              </a>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>Certificate of Indigency</h3>
+                <p>Para sa mga nangangailangan ng tulong pinansyal o medikal.</p>
+              </a>
+            </div>
+            <div class="column is-one-third-desktop is-half-tablet">
+              <a class="service-card" href="#">
+                <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3>Health Center Services</h3>
+                <p>Libreng konsulta, bakuna, at iba pang serbisyong pangkalusugan.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pt-0">
+        <div class="container">
+          <div class="info-box">
+            <h3 class="title is-5">Paano mag-request ng serbisyo</h3>
+            <ol>
+              <li>Magtungo sa Barangay Hall sa opisina ng serbisyo.</li>
+              <li>Magdala ng kinakailangang dokumento at valid ID.</li>
+              <li>Humingi ng appointment o mag-file ng request sa front desk.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4">
+            <h4>Barangay AdReiNo</h4>
+            <p>Opisyal na website ng barangay para sa pag-ugnay, serbisyo, at mahalagang impormasyon ng komunidad.</p>
+          </div>
+          <div class="column is-4">
+            <h4>Mabilisang Link</h4>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="officials.html">Mga Opisyal</a></p>
+            <p><a href="services.html">Mga Serbisyo</a></p>
+            <p><a href="contact.html">Makipag-ugnayan</a></p>
+          </div>
+          <div class="column is-4">
+            <h4>Sundan Kami</h4>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom has-text-centered">© 2026 Barangay AdReiNo. Lahat ng karapatan ay nakalaan.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".navbar-burger");
+        const menu = document.getElementById(burger.dataset.target);
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("is-active");
+          menu.classList.toggle("is-active");
+          burger.setAttribute("aria-expanded", burger.classList.contains("is-active"));
+        });
+      });
+    </script>
+  </body>
+</html>
