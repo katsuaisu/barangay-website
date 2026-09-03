@@ -1,130 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links and Images Practice</title>
-</head>
-<body>
-    <h1>Links and Images Practice</h1>
-    
-    <nav>
-        <a href="#links">Links Section</a> |
-        <a href="#images">Images Section</a> |
-        <a href="#figures">Figures Section</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay AdReiNo | Contact Us</title>
+    <meta name="description" content="Contact the Barangay AdReiNo office for requests, concerns, and assistance." />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --barangay-blue: #0a3d91;
+        --barangay-blue-dark: #072a66;
+        --sunburst-gold: #fcd116;
+        --signal-red: #ce1126;
+        --paper: #faf8f2;
+        --ink: #1e293b;
+        --mist: #5b6472;
+        --card-border: #e7e2d6;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Public Sans", sans-serif;
+        background-color: var(--paper);
+        color: var(--ink);
+        line-height: 1.7;
+        font-size: 18px;
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Fraunces", serif;
+        color: var(--barangay-blue-dark);
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: 0;
+        background: var(--sunburst-gold);
+        color: var(--ink);
+        padding: 0.75rem 1.25rem;
+        z-index: 999;
+        font-weight: 700;
+      }
+      .skip-link:focus {
+        left: 0.5rem;
+        top: 0.5rem;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      .button:focus-visible {
+        outline: 3px solid var(--signal-red);
+        outline-offset: 2px;
+      }
+
+      .utility-strip {
+        background: var(--barangay-blue-dark);
+        color: #fff;
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+      }
+      .utility-strip a {
+        color: #fff;
+        font-weight: 600;
+      }
+      .utility-strip .icon {
+        color: var(--sunburst-gold);
+      }
+
+      .navbar {
+        background: var(--barangay-blue);
+        border-bottom: 4px solid var(--sunburst-gold);
+      }
+      .navbar-item,
+      .navbar-link {
+        color: #fff !important;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+      .navbar-item:hover,
+      .navbar-link:hover {
+        background-color: var(--barangay-blue-dark) !important;
+        color: var(--sunburst-gold) !important;
+      }
+      .navbar-burger {
+        color: #fff;
+      }
+      .navbar-burger span {
+        background-color: #fff;
+      }
+      .seal-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.08rem;
+        margin-right: 0.7rem;
+        border: 2px solid #fff;
+      }
+
+      .hero-barangay {
+        background: linear-gradient(180deg, var(--barangay-blue) 0%, var(--barangay-blue-dark) 100%);
+        color: #fff;
+        padding: 3.5rem 1.5rem 4.5rem;
+      }
+      .hero-seal {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 2.4rem;
+        border: 4px solid #fff;
+        margin: 0 auto 1.25rem;
+      }
+      .hero-barangay h1 {
+        color: #fff;
+        font-size: 2.75rem;
+        margin-bottom: 0.25rem;
+      }
+      .hero-subtitle {
+        color: var(--sunburst-gold);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .hero-tagline {
+        color: #eaf0fb;
+        max-width: 680px;
+        margin: 1.25rem auto 2rem;
+        font-size: 1.12rem;
+      }
+
+      .section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--signal-red);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .section-intro {
+        color: var(--mist);
+        max-width: 620px;
+        margin-bottom: 2.5rem;
+      }
+
+      .info-card,
+      .contact-panel,
+      .message-box {
+        background: #fff;
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(10, 61, 145, 0.04);
+      }
+      .info-card {
+        padding: 1.75rem 1.5rem;
+        height: 100%;
+      }
+      .info-card .icon-wrap {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #eaf0fb;
+        color: var(--barangay-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .info-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .info-card p,
+      .info-card li {
+        color: var(--mist);
+      }
+
+      .contact-panel {
+        padding: 2rem;
+      }
+      .field {
+        margin-bottom: 1.2rem;
+      }
+      .label {
+        color: var(--barangay-blue-dark);
+        font-weight: 700;
+      }
+      .input,
+      .textarea {
+        border-radius: 10px;
+        border-color: #dfe6f1;
+        box-shadow: none;
+        min-height: 3rem;
+        font-size: 1rem;
+      }
+      .input:focus,
+      .textarea:focus {
+        border-color: var(--barangay-blue);
+        box-shadow: 0 0 0 0.125em rgba(10, 61, 145, 0.15);
+      }
+      .button.is-primary {
+        background-color: var(--barangay-blue);
+        border: none;
+        border-radius: 10px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-weight: 700;
+      }
+      .button.is-primary:hover {
+        background-color: var(--barangay-blue-dark);
+      }
+
+      .message-box {
+        padding: 1.5rem 1.25rem;
+        margin-top: 1.5rem;
+        border-left: 6px solid var(--signal-red);
+      }
+      .message-box h3 {
+        font-size: 1.25rem;
+      }
+      .message-box p,
+      .message-box li {
+        color: var(--mist);
+      }
+
+      .map-placeholder {
+        background: #eaf0fb;
+        border: 2px dashed var(--barangay-blue);
+        border-radius: 14px;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        color: var(--barangay-blue);
+      }
+      .map-placeholder i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hotline-box {
+        background: #fff5f5;
+        border: 2px solid var(--signal-red);
+        border-radius: 14px;
+        padding: 2rem;
+      }
+      .hotline-box h2 {
+        color: var(--signal-red);
+      }
+      .hotline-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 0;
+        border-bottom: 1px dashed #f0c9c9;
+        font-size: 1.04rem;
+      }
+      .hotline-item:last-child {
+        border-bottom: none;
+      }
+      .hotline-number {
+        font-weight: 800;
+        color: var(--signal-red);
+      }
+
+      footer.site-footer {
+        background: var(--barangay-blue-dark);
+        color: #eaf0fb;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      footer.site-footer h4 {
+        color: #fff;
+        font-family: "Fraunces", serif;
+        margin-bottom: 1rem;
+      }
+      footer.site-footer a {
+        color: #eaf0fb;
+      }
+      footer.site-footer a:hover {
+        color: var(--sunburst-gold);
+      }
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        margin-right: 0.5rem;
+      }
+      .footer-social a:hover {
+        background: var(--sunburst-gold);
+        color: var(--barangay-blue-dark);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        font-size: 0.9rem;
+        color: #b8c7e6;
+      }
+
+      @media (max-width: 768px) {
+        .hero-barangay h1 {
+          font-size: 2.1rem;
+        }
+        .section-title {
+          font-size: 1.7rem;
+        }
+        body {
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Lumaktaw sa nilalaman (Skip to content)</a>
+
+    <div class="utility-strip">
+      <div class="container is-flex is-justify-content-space-between is-align-items-center is-flex-wrap-wrap px-4" style="gap:0.5rem">
+        <div>
+          <span class="icon"><i class="fa-solid fa-phone"></i></span>
+          Hotline: <a href="tel:+639696372771">09696372771</a>
+        </div>
+        <div>
+          <span class="icon"><i class="fa-solid fa-clock"></i></span>
+          Bukas: Lunes–Biyernes, 8:00 AM – 5:00 PM
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html" style="align-items:center">
+            <span class="seal-badge">BARU</span>
+            <span class="brand-font" style="color:#fff; font-size:1.2rem">Barangay AdReiNo</span>
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="mainNavbar"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="mainNavbar" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="officials.html">Mga Opisyal</a>
+            <a class="navbar-item" href="index.html#services">Mga Serbisyo</a>
+            <a class="navbar-item" href="index.html#announcements">Balita &amp; Anunsyo</a>
+            <a class="navbar-item" href="index.html#hotlines">Emergency Hotlines</a>
+            <a class="navbar-item" href="contact.html">Pahina ng Pakikipag-ugnayan</a>
+          </div>
+        </div>
+      </div>
     </nav>
-    
-    <hr>
-    
-    <section id="links">
-        <h2>Different Types of Links</h2>
-        
-        <h3>External Links</h3>
-        <ul>
-            <li><a href="https://www.google.com" target="_blank">Google (opens in new tab)</a></li>
-            <li><a href="https://www.deped.gov.ph" target="_blank">DepEd Website</a></li>
-            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-        </ul>
-        
-        <h3>Email Links</h3>
-        <ul>
-            <li><a href="mailto:captain@barangay.ph">Email the Barangay Captain</a></li>
-            <li><a href="mailto:info@school.edu.ph?subject=Inquiry">Email School (with subject)</a></li>
-        </ul>
-        
-        <h3>Phone Links</h3>
-        <ul>
-            <li><a href="tel:+6391234567890">Call: 0912 345 6789</a></li>
-            <li><a href="tel:911">Emergency: 911</a></li>
-        </ul>
-        
-        <h3>Anchor Links (Jump to section)</h3>
-        <ul>
-            <li><a href="#images">Jump to Images Section</a></li>
-            <li><a href="#figures">Jump to Figures Section</a></li>
-            <li><a href="#top">Back to Top</a></li>
-        </ul>
-    </section>
-    
-    <hr>
-    
-    <section id="images">
-        <h2>Image Examples</h2>
-        
-        <h3>Placeholder Images</h3>
-        <p>Since we don't have actual images, we're using placeholder services:</p>
-        
-        <h4>Example 1: Square Image</h4>
-        <img src="https://via.placeholder.com/300x300/0066cc/ffffff?text=Barangay+Logo" 
-             alt="Barangay Logo Placeholder" 
-             width="300" 
-             height="300">
-        
-        <h4>Example 2: Wide Image</h4>
-        <img src="https://via.placeholder.com/600x300/009933/ffffff?text=Barangay+Hall" 
-             alt="Barangay Hall Placeholder" 
-             width="600" 
-             height="300">
-        
-        <h4>Example 3: Responsive Image</h4>
-        <p>This image adjusts to screen size:</p>
-        <img src="https://via.placeholder.com/800x400/cc0000/ffffff?text=Community+Event" 
-             alt="Community Event Placeholder" 
-             style="max-width: 100%; height: auto;">
-        
-        <h4>Example 4: Image as Link</h4>
-        <p>Click the logo to go to homepage:</p>
-        <a href="#top">
-            <img src="https://via.placeholder.com/150x150/ffcc00/000000?text=Click+Me" 
-                 alt="Clickable Logo">
-        </a>
-    </section>
-    
-    <hr>
-    
-    <section id="figures">
-        <h2>Figures with Captions</h2>
-        
-        <figure>
-            <img src="https://via.placeholder.com/500x300/663399/ffffff?text=Barangay+Captain" 
-                 alt="Barangay Captain Juan Santos" 
-                 style="max-width: 100%; height: auto;">
-            <figcaption>Barangay Captain Juan Santos - Serving since 2018</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="https://via.placeholder.com/500x300/ff6600/ffffff?text=Community+Center" 
-                 alt="San Juan Community Center" 
-                 style="max-width: 100%; height: auto;">
-            <figcaption>San Juan Community Center - Built in 1985, renovated in 2020</figcaption>
-        </figure>
-        
-        <figure>
-            <img src="https://via.placeholder.com/500x300/009999/ffffff?text=Health+Workers" 
-                 alt="Barangay Health Workers" 
-                 style="max-width: 100%; height: auto;">
-            <figcaption>Our dedicated barangay health workers during a vaccination drive</figcaption>
-        </figure>
-    </section>
-    
-    <hr>
-    
-    <section>
-        <h2>Image Best Practices</h2>
-        <ul>
-            <li><strong>Always use alt text</strong> - Describes image for screen readers</li>
-            <li><strong>Use descriptive filenames</strong> - barangay-hall.jpg not img001.jpg</li>
-            <li><strong>Optimize file size</strong> - Large images slow down websites</li>
-            <li><strong>Use appropriate formats</strong> - JPG for photos, PNG for logos</li>
-            <li><strong>Make images responsive</strong> - Use max-width: 100% for mobile</li>
-        </ul>
-    </section>
-    
-    <hr>
-    
-    <footer>
-        <p><a href="#top">Back to Top</a></p>
-        <p>&copy; 2025 Links and Images Practice</p>
+
+    <main id="main-content">
+      <section class="hero-barangay">
+        <div class="container has-text-centered">
+          <div class="hero-seal" aria-hidden="true">BARU</div>
+          <p class="hero-subtitle">Republika ng Pilipinas &bull; Lungsod ng Halimbawa</p>
+          <h1>Makipag-ugnayan sa Amin</h1>
+          <p class="hero-tagline">
+            Para sa mga katanungan, kahilingan, at pangangailangan ng inyong pamilya,
+            narito ang mga paraan upang makarating sa opisina ng barangay.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="section-kicker has-text-centered">Kontak</p>
+          <h2 class="section-title has-text-centered">Tulungan ka namin</h2>
+          <p class="section-intro has-text-centered" style="margin-left:auto; margin-right:auto;">
+            Huwag mag-atubiling makipag-ugnayan sa aming opisina para sa mga request,
+            concern, at impormasyon tungkol sa serbisyo ng barangay.
+          </p>
+
+          <div class="columns is-variable is-5">
+            <div class="column is-one-quarter">
+              <div class="info-card">
+                <div class="icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Lokasyon</h3>
+                <p>Barangay Hall, AdReiNo, Lungsod ng Halimbawa</p>
+              </div>
+            </div>
+            <div class="column is-one-quarter">
+              <div class="info-card">
+                <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                <h3>Telepono</h3>
+                <p><a href="tel:+639696372771">09696372771</a></p>
+              </div>
+            </div>
+            <div class="column is-one-quarter">
+              <div class="info-card">
+                <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                <h3>Email</h3>
+                <p><a href="mailto:adreinobrgy@gmail.com">adreinobrgy@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="column is-one-quarter">
+              <div class="info-card">
+                <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
+                <h3>Oras ng Tanggapan</h3>
+                <p>Lunes–Biyernes<br />8:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pt-0">
+        <div class="container">
+          <div class="columns is-variable is-6">
+            <div class="column is-two-thirds">
+              <div class="contact-panel">
+                <h3 class="section-title" style="font-size:1.85rem; margin-bottom:1rem;">Ipadala ang iyong mensahe</h3>
+                <form>
+                  <div class="field">
+                    <label class="label">Buong Pangalan</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Hal. Juan Dela Cruz" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                      <input class="input" type="email" placeholder="juandelacruz@email.com" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label">Paksa</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Hal. Request for Barangay Clearance" />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label">Mensahe</label>
+                    <div class="control">
+                      <textarea class="textarea" rows="6" placeholder="Isulat ang iyong mensahe o katanungan..."></textarea>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-primary" type="submit">
+                        <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+                        <span>Ipadala ang Mensahe</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="column is-one-third">
+              <div class="hotline-box">
+                <h2 class="section-title" style="font-size:1.7rem; margin-bottom:1rem;">Emergency Hotlines</h2>
+                <div class="hotline-item">
+                  <span>Barangay Patrol</span>
+                  <span class="hotline-number"><a href="tel:+639961112223">0961 111 2223</a></span>
+                </div>
+                <div class="hotline-item">
+                  <span>Health Center</span>
+                  <span class="hotline-number"><a href="tel:+639981112224">0981 111 2224</a></span>
+                </div>
+                <div class="hotline-item">
+                  <span>Police Assistance</span>
+                  <span class="hotline-number"><a href="tel:117">117</a></span>
+                </div>
+                <div class="hotline-item">
+                  <span>Fire Department</span>
+                  <span class="hotline-number"><a href="tel:160">160</a></span>
+                </div>
+              </div>
+
+              <div class="message-box">
+                <h3>Mga Paghahanda</h3>
+                <ul>
+                  <li>Magdala ng valid ID para sa mga serbisyo.</li>
+                  <li>Magkasa ng detalyadong impormasyon para sa iyong request.</li>
+                  <li>Kung emergency, tawagan ang mga hotline nang direkta.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pt-0">
+        <div class="container">
+          <div class="columns is-variable is-5 is-vcentered">
+            <div class="column is-half">
+              <div class="map-placeholder">
+                <div>
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">Mapa ng Barangay</h3>
+                  <p>Barangay AdReiNo Center Road,<br />Lungsod ng Halimbawa</p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <p class="section-kicker">Alamin</p>
+              <h2 class="section-title">Paano makakarating sa opisina</h2>
+              <p class="section-intro" style="margin-bottom:1.3rem;">
+                Matatagpuan ang barangay hall sa gitna ng komunidad at madaling maabot galing sa mga
+                pangunahing kalsada at residential area. Maaari rin kayong maglapit sa office para sa mga
+                personal na konsultasyon.
+              </p>
+              <ul>
+                <li>Katabi ng multi-purpose hall</li>
+                <li>Maaaring magbayad ng mga dokumento sa front desk</li>
+                <li>Available ang assistance para sa mga residente at bisita</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-third">
+            <h4>Barangay AdReiNo</h4>
+            <p>Opisyal na website ng barangay para sa pag-ugnay, serbisyo, at mahalagang impormasyon ng komunidad.</p>
+          </div>
+          <div class="column is-one-third">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="officials.html">Mga Opisyal</a></li>
+              <li><a href="contact.html">Kontak</a></li>
+            </ul>
+          </div>
+          <div class="column is-one-third">
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Mail"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom has-text-centered">© 2026 Barangay AdReiNo. Lahat ng karapatan ay nakalaan.</div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
